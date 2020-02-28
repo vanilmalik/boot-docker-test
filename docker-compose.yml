@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  app:
+    build:
+      context: .
+    environment:
+      DB_USERNAME: root
+      DB_PASSWORD: root
+      DB_JDBCURL: jdbc:mysql://mysql/test_schema
+    ports:
+      - "8080:8080"
+    networks:
+      - sema4
+
+networks:
+  sema4:
+    external: true
